@@ -1,0 +1,28 @@
+/*
+private void addTurnaroundDay(int days) {
+    int weekendDayCount = (days + dayOfWeek.getIndex()) / 7 * 2;
+    int potentialDueDayOfMonth = dayOfMonth + days + weekendDayCount;
+    while (potentialDueDayOfMonth > monthLength) {
+      potentialDueDayOfMonth -= monthLength;
+      setMonth(month.getNext());
+    }
+    setDayOfMonth(potentialDueDayOfMonth);
+}
+*/
+
+
+while (true) {
+    Scanner scanner = new Scanner(System.in);
+
+    WorkingDateTime submitDateTime = new WorkingDateTime(2022, Month.DEC, 29, 9, PartOfDay.AM, 20);
+    int turnaroundTime = scanner.nextInt();
+
+    System.out.print(submitDateTime);
+    System.out.print(" + ");
+    System.out.println(turnaroundTime + " hours");
+
+    DateTimeUtil dateTimeUtil = new DateTimeUtil();
+
+    WorkingDateTime resolveDateTime = dateTimeUtil.CalculateDueDate(submitDateTime, turnaroundTime);
+    System.out.println(resolveDateTime);
+}
